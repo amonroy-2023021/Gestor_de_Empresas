@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "3c146139-e88c-4edb-8e63-bd5e6c95f5cf",
+		"name": "GestorEmpresas_endPoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "41661503"
+	},
+	"item": [
+		{
+			"name": "Companys",
+			"item": [
+				{
+					"name": "registrarEmpresa",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Listar empresas",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "EditarEmpresas",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"New Company Name\",\r\n    \"companyType\": \"New Type\",\r\n    \"incorporationDate\": \"2023-01-01\",\r\n    \"category\": \"Servicios\",\r\n    \"years\": 10,\r\n    \"representative\": {\r\n        \"nameRepre\": \"New Representative Name\",\r\n        \"position\": \"New Position\",\r\n        \"contact\": {\r\n            \"email\": \"newemail@example.com\",\r\n            \"phone\": \"1234567890\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3000/gestorEmpresas/v1/company/companies/67be40efe13d13ddbd452d27"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"juanperez123\",\r\n    \"password\": \"MiContraseñaSegura2025\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3000/gestorEmpresas/v1/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "ListarAdministradores",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "EditarAdministradores",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JjZWZiMzE2MDA2OGRhZDA3OGQwZTYiLCJpYXQiOjE3NDA0MzU2OTMsImV4cCI6MTc0MDQ0NjQ5M30.VuUOgXJX28jDM1iYuZuXJ6ryQMHVrmF0TFl1JVw9jb4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"surname\": \"alexis_kun4.23\",\r\n    \"password\": \"NuevaContraseñaSegura2025\",\r\n    \"oldPassword\": \"MiContraseñaSegura2025\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3000/gestorEmpresas/v1/user/67bcefb3160068dad078d0e6"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
