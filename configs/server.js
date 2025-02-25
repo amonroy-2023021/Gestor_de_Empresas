@@ -7,6 +7,7 @@ import morgan from 'morgan';
 import { dbConnection } from './mongo.js';
 import authRoutes from '../src/auth/auth.routes.js';
 import userRouter from '../src/user/user.routes.js';
+import companyRouter from '../src/companys/company.routes.js'
 import { swaggerDocs, swaggerUi } from "./swagger.js";
 
 const middlewares = (app) => {
@@ -33,6 +34,7 @@ const middlewares = (app) => {
 const routes = (app) => {
     app.use('/gestorEmpresas/v1/auth', authRoutes),
     app.use('/gestorEmpresas/v1/user', userRouter),
+    app.use('/gestorEmpresas/v1/company', companyRouter)
     app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 
 }
