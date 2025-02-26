@@ -1,0 +1,324 @@
+{
+	"info": {
+		"_postman_id": "9191712d-c66e-4889-ad58-50178df02d95",
+		"name": "GestorEmpresas_endPoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41661503"
+	},
+	"item": [
+		{
+			"name": "Companys",
+			"item": [
+				{
+					"name": "registrarEmpresa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JmNzdiN2FhMTFiNjEzOTBlYmM5YmQiLCJpYXQiOjE3NDA2MDEyODEsImV4cCI6MTc0MDYxMjA4MX0.ygJYDsMbJL9YRHwo2--mzRzdYxT12EW0vvLmOxIZJDM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Innovative Solutions\",\r\n  \"companyType\": \"Sociedad Limitada\",\r\n  \"incorporationDate\": \"2018-05-20\",\r\n  \"category\": \"Servicios\",\r\n  \"years\": 5,\r\n  \"representative\": {\r\n    \"nameRepre\": \"Maria Lopez\",\r\n    \"position\": \"Directora General\",\r\n    \"contact\": {\r\n      \"email\": \"maria.lopez@innovativesolutions.com\",\r\n      \"phone\": \"+987654321\"\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorEmpresas/v1/company/registerCompany",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorEmpresas",
+								"v1",
+								"company",
+								"registerCompany"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar empresas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JmNzdiN2FhMTFiNjEzOTBlYmM5YmQiLCJpYXQiOjE3NDA2MDEyODEsImV4cCI6MTc0MDYxMjA4MX0.ygJYDsMbJL9YRHwo2--mzRzdYxT12EW0vvLmOxIZJDM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorEmpresas/v1/company/companies?FiltrarPor=A-Z",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorEmpresas",
+								"v1",
+								"company",
+								"companies"
+							],
+							"query": [
+								{
+									"key": "FiltrarPor",
+									"value": "A-Z"
+								},
+								{
+									"key": "FiltrarPor",
+									"value": "Z-A",
+									"disabled": true
+								},
+								{
+									"key": "FiltrarPor",
+									"value": "category",
+									"disabled": true
+								},
+								{
+									"key": "FiltrarPor",
+									"value": "years",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditarEmpresas",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JmNzdiN2FhMTFiNjEzOTBlYmM5YmQiLCJpYXQiOjE3NDA2MDEyODEsImV4cCI6MTc0MDYxMjA4MX0.ygJYDsMbJL9YRHwo2--mzRzdYxT12EW0vvLmOxIZJDM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"New Company Name\",\r\n    \"companyType\": \"New Type\",\r\n    \"incorporationDate\": \"2023-01-01\",\r\n    \"category\": \"Servicios\",\r\n    \"years\": 10,\r\n    \"representative\": {\r\n        \"nameRepre\": \"New Representative Name\",\r\n        \"position\": \"New Position\",\r\n        \"contact\": {\r\n            \"email\": \"newemail@example.com\",\r\n            \"phone\": \"1234567890\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorEmpresas/v1/company/companies/67be40efe13d13ddbd452d27",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorEmpresas",
+								"v1",
+								"company",
+								"companies",
+								"67be40efe13d13ddbd452d27"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GenerarReporte",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JmNzdiN2FhMTFiNjEzOTBlYmM5YmQiLCJpYXQiOjE3NDA2MDEyODEsImV4cCI6MTc0MDYxMjA4MX0.ygJYDsMbJL9YRHwo2--mzRzdYxT12EW0vvLmOxIZJDM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorEmpresas/v1/company/report",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorEmpresas",
+								"v1",
+								"company",
+								"report"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Juan\",\r\n  \"surname\": \"Perez\",\r\n  \"username\": \"juanperez\",\r\n  \"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorEmpresas/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorEmpresas",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"juanperez\",\r\n  \"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorEmpresas/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorEmpresas",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarAdministradores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorEmpresas/v1/user/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorEmpresas",
+								"v1",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditarAdministradores",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JjZWZiMzE2MDA2OGRhZDA3OGQwZTYiLCJpYXQiOjE3NDA0MzU2OTMsImV4cCI6MTc0MDQ0NjQ5M30.VuUOgXJX28jDM1iYuZuXJ6ryQMHVrmF0TFl1JVw9jb4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"surname\": \"alexis_kun4.23\",\r\n    \"password\": \"NuevaContraseñaSegura2025\",\r\n    \"oldPassword\": \"MiContraseñaSegura2025\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorEmpresas/v1/user/67bcefb3160068dad078d0e6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorEmpresas",
+								"v1",
+								"user",
+								"67bcefb3160068dad078d0e6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
