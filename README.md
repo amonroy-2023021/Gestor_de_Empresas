@@ -16,3 +16,8 @@ debera hacer esto en todas las rutas de empresas, listar, registrar, editar y ge
 Al editar un perfil, debes poner tu id en la ruta de postman, adicional a eso debes poner el token
 solo puedes editar tu mismo perfil, no puedes editar el perfil de otros, si lo haces te dara el siguiente error:
 ![Editar](https://github.com/user-attachments/assets/8b56b904-155f-461d-bf9e-177afda70b75)
+
+## Filtrar Empresas 
+Para filtrar las empresas, solo debes de dar click en un cuadro con la opcion que quieras usar para filtrar 
+las empresas:
+![FiltrarPor](https://github.com/user-attachments/assets/045f21ca-7872-4cce-a8c0-c6a5e8c83f31)
