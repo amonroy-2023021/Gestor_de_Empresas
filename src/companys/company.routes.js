@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { updateCompany, listCompanies, registerCompany } from "../companys/company.controller.js";
+import {generateExcel, updateCompany, listCompanies, registerCompany } from "../companys/company.controller.js";
 
 const router = Router();
 
@@ -223,4 +223,31 @@ router.get("/companies", listCompanies);
  */
 router.put("/companies/:id", updateCompany);
 
+/**
+ * @swagger
+ * /gestorEmpresas/v1/company/{id}/report:
+ *   get:
+ *     summary: Generar un reporte en Excel de una empresa
+ *     tags: [Companies]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: ID de la empresa
+ *     responses:
+ *       200:
+ *         description: Reporte generado exitosamente
+ *         content:
+ *           application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+ *             schema:
+ *               type: string
+ *               format: binary
+ *       404:
+ *         description: Empresa no encontrada
+ *       500:
+ *         description: Error del servidor
+ */
+router.get("/:id/report", generateExcel);
 export default router;

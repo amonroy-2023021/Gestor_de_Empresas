@@ -1,4 +1,6 @@
+import { header } from "express-validator";
 import company from "../companys/company.model.js"
+import ExcelJS from "exceljs";
 
 export const registerCompany = async (req, res) => {
     try {
@@ -101,3 +103,46 @@ export const updateCompany = async (req, res) => {
         });
     }
 }
+
+
+export const generateExcel = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const empresa = await company.findById(id);
+        if (!empresa) {
+            return res.status(404).json({
+                message: "Company not found"
+            });
+        }
+
+        const workbook = new ExcelJS.Workbook();
+        const worksheet = workbook.addWorksheet("Company Report");
+
+        worksheet.columns = [
+            { header: "Field", key: "field", width: 30 },
+            { header: "Value", key: "value", width: 30 }
+        ];
+
+        worksheet.addRow({ field: 'Nombre', value: empresa.name });
+        worksheet.addRow({ field: 'Tipo de Compania', value: empresa.companyType });
+        worksheet.addRow({ field: 'Fecha de incorporacion', value: empresa.incorporationDate });
+        worksheet.addRow({ field: 'Categoria', value: empresa.category });
+        worksheet.addRow({ field: 'Anios', value: empresa.years });
+        worksheet.addRow({ field: 'Nombre de representante', value: empresa.representative.nameRepre });
+        worksheet.addRow({ field: 'Puesto del representante', value: empresa.representative.position });
+        worksheet.addRow({ field: 'Email del representante', value: empresa.representative.contact.email });
+        worksheet.addRow({ field: 'Numero del representante', value: empresa.representative.contact.phone });
+
+        res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        res.setHeader('Content-Disposition', `attachment; filename=company_report_${empresa.name}.xlsx`);
+
+        await workbook.xlsx.write(res);
+        res.end();
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            message: "Failed to generate excel",
+            error: error.message
+        });
+    }
+};
