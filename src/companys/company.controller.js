@@ -48,10 +48,10 @@ export const registerCompany = async (req, res) => {
 
 export const listCompanies = async (req, res) => {
     try {
-        const { sortBy } = req.query;
+        const { FiltrarPor } = req.query;
 
         let sortCriteria;
-        switch (sortBy) {
+        switch (FiltrarPor) {
             case 'A-Z':
                 sortCriteria = { name: 1 };
                 break;

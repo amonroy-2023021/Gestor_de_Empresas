@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { validarJWT } from '../middleware/jwt-validator.js';
 import {generateExcel, updateCompany, listCompanies, registerCompany } from "../companys/company.controller.js";
 
 const router = Router();
@@ -79,7 +80,7 @@ const router = Router();
  *       500:
  *         description: Error del servidor
  */
-router.post('/registerCompany', registerCompany);
+router.post('/registerCompany',validarJWT, registerCompany);
 
 /**
  * @swagger
@@ -131,7 +132,7 @@ router.post('/registerCompany', registerCompany);
  *       500:
  *         description: Error del servidor
  */
-router.get("/companies", listCompanies);
+router.get("/companies",validarJWT, listCompanies);
 
 /**
  * @swagger
@@ -221,7 +222,7 @@ router.get("/companies", listCompanies);
  *       500:
  *         description: Error del servidor
  */
-router.put("/companies/:id", updateCompany);
+router.put("/companies/:id",validarJWT, updateCompany);
 
 /**
  * @swagger
@@ -242,5 +243,5 @@ router.put("/companies/:id", updateCompany);
  *       500:
  *         description: Error del servidor
  */
-router.get("/report", generateExcel);
+router.get("/report",validarJWT, generateExcel);
 export default router;
