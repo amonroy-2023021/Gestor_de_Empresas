@@ -35,7 +35,7 @@ const routes = (app) => {
     app.use('/gestorEmpresas/v1/auth', authRoutes),
     app.use('/gestorEmpresas/v1/user', userRouter),
     app.use('/gestorEmpresas/v1/company', companyRouter)
-    app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
+    app.use("/gestorEmpresas/v1/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 
 }
 
