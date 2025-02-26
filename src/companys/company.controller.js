@@ -1,6 +1,11 @@
-import { header } from "express-validator";
 import company from "../companys/company.model.js"
 import ExcelJS from "exceljs";
+import { fileURLToPath } from 'url';
+import fs from 'fs';
+import path from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export const registerCompany = async (req, res) => {
     try {
@@ -107,37 +112,54 @@ export const updateCompany = async (req, res) => {
 
 export const generateExcel = async (req, res) => {
     try {
-        const { id } = req.params;
-        const empresa = await company.findById(id);
-        if (!empresa) {
+        const empresas = await company.find();
+        if (!empresas || empresas.length === 0) {
             return res.status(404).json({
-                message: "Company not found"
+                message: "No companies found"
             });
         }
 
         const workbook = new ExcelJS.Workbook();
-        const worksheet = workbook.addWorksheet("Company Report");
+        const worksheet = workbook.addWorksheet("Companies Report");
 
         worksheet.columns = [
-            { header: "Field", key: "field", width: 30 },
-            { header: "Value", key: "value", width: 30 }
+            { header: "Nombre", key: "name", width: 30 },
+            { header: "Tipo de Compania", key: "companyType", width: 30 },
+            { header: "Fecha de incorporacion", key: "incorporationDate", width: 30 },
+            { header: "Categoria", key: "category", width: 30 },
+            { header: "Anios", key: "years", width: 10 },
+            { header: "Nombre de representante", key: "nameRepre", width: 30 },
+            { header: "Puesto del representante", key: "position", width: 30 },
+            { header: "Email del representante", key: "email", width: 30 },
+            { header: "Numero del representante", key: "phone", width: 20 }
         ];
 
-        worksheet.addRow({ field: 'Nombre', value: empresa.name });
-        worksheet.addRow({ field: 'Tipo de Compania', value: empresa.companyType });
-        worksheet.addRow({ field: 'Fecha de incorporacion', value: empresa.incorporationDate });
-        worksheet.addRow({ field: 'Categoria', value: empresa.category });
-        worksheet.addRow({ field: 'Anios', value: empresa.years });
-        worksheet.addRow({ field: 'Nombre de representante', value: empresa.representative.nameRepre });
-        worksheet.addRow({ field: 'Puesto del representante', value: empresa.representative.position });
-        worksheet.addRow({ field: 'Email del representante', value: empresa.representative.contact.email });
-        worksheet.addRow({ field: 'Numero del representante', value: empresa.representative.contact.phone });
+        empresas.forEach(empresa => {
+            worksheet.addRow({
+                name: empresa.name,
+                companyType: empresa.companyType,
+                incorporationDate: empresa.incorporationDate,
+                category: empresa.category,
+                years: empresa.years,
+                nameRepre: empresa.representative.nameRepre,
+                position: empresa.representative.position,
+                email: empresa.representative.contact.email,
+                phone: empresa.representative.contact.phone
+            });
+        });
 
-        res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-        res.setHeader('Content-Disposition', `attachment; filename=company_report_${empresa.name}.xlsx`);
+        const dir = path.join(__dirname, 'reports');
+        if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir);
+        }
 
-        await workbook.xlsx.write(res);
-        res.end();
+        const filePath = path.join(dir, `companies_report.xlsx`);
+        await workbook.xlsx.writeFile(filePath);
+
+        res.status(200).json({
+            message: "Excel file generated successfully",
+            filePath: filePath
+        });
     } catch (error) {
         console.log(error);
         return res.status(500).json({

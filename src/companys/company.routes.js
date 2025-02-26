@@ -225,17 +225,10 @@ router.put("/companies/:id", updateCompany);
 
 /**
  * @swagger
- * /gestorEmpresas/v1/company/{id}/report:
+ * /gestorEmpresas/v1/company/report:
  *   get:
- *     summary: Generar un reporte en Excel de una empresa
+ *     summary: Generar un reporte en Excel de todas las empresas registradas
  *     tags: [Companies]
- *     parameters:
- *       - in: path
- *         name: id
- *         schema:
- *           type: string
- *         required: true
- *         description: ID de la empresa
  *     responses:
  *       200:
  *         description: Reporte generado exitosamente
@@ -245,9 +238,9 @@ router.put("/companies/:id", updateCompany);
  *               type: string
  *               format: binary
  *       404:
- *         description: Empresa no encontrada
+ *         description: No se encontraron empresas
  *       500:
  *         description: Error del servidor
  */
-router.get("/:id/report", generateExcel);
+router.get("/report", generateExcel);
 export default router;
