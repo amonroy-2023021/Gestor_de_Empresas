@@ -1,0 +1,286 @@
+[{
+  "_id": {
+    "$oid": "67be87f83001c1ee2127366f"
+  },
+  "name": "Tech Innovators",
+  "companyType": "Sociedad Anónima",
+  "incorporationDate": {
+    "$date": "2019-04-25T00:00:00.000Z"
+  },
+  "category": "Tecnología",
+  "years": 6,
+  "representative": {
+    "nameRepre": "Laura Martínez",
+    "position": "CEO",
+    "contact": {
+      "email": "laura.martinez@techinnovators.com",
+      "phone": "555-1234"
+    }
+  },
+  "createdAt": {
+    "$date": "2025-02-26T03:18:16.098Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T03:18:16.098Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67be88073001c1ee21273671"
+  },
+  "name": "Green Energy Solutions",
+  "companyType": "Sociedad Limitada",
+  "incorporationDate": {
+    "$date": "2015-08-10T00:00:00.000Z"
+  },
+  "category": "Energía",
+  "years": 10,
+  "representative": {
+    "nameRepre": "Carlos Gómez",
+    "position": "Director General",
+    "contact": {
+      "email": "carlos.gomez@greenenergy.com",
+      "phone": "555-5678"
+    }
+  },
+  "createdAt": {
+    "$date": "2025-02-26T03:18:31.803Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T03:18:31.803Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67be88163001c1ee21273673"
+  },
+  "name": "HealthCare Partners",
+  "companyType": "Otra",
+  "incorporationDate": {
+    "$date": "2021-01-15T00:00:00.000Z"
+  },
+  "category": "Salud",
+  "years": 4,
+  "representative": {
+    "nameRepre": "Ana Fernández",
+    "position": "Fundadora",
+    "contact": {
+      "email": "ana.fernandez@healthcare.com",
+      "phone": "555-9876"
+    }
+  },
+  "createdAt": {
+    "$date": "2025-02-26T03:18:46.211Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T03:18:46.211Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c2900d7694ad640c68f819"
+  },
+  "name": "TechVision",
+  "companyType": "Sociedad Anónima",
+  "incorporationDate": {
+    "$date": "2015-08-10T00:00:00.000Z"
+  },
+  "category": "Tecnología",
+  "years": 8,
+  "representative": {
+    "nameRepre": "Carlos Pérez",
+    "position": "CEO",
+    "contact": {
+      "email": "carlos.perez@techvision.com",
+      "phone": "+123456789"
+    }
+  },
+  "createdAt": {
+    "$date": "2025-03-01T04:41:49.945Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T04:41:49.945Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c291637694ad640c68f81f"
+  },
+  "name": "EcoGreen Solutions",
+  "companyType": "Sociedad Limitada",
+  "incorporationDate": {
+    "$date": "2019-11-25T00:00:00.000Z"
+  },
+  "category": "Servicios",
+  "years": 4,
+  "representative": {
+    "nameRepre": "Laura Gómez",
+    "position": "Gerente General",
+    "contact": {
+      "email": "laura.gomez@ecogreensolutions.com",
+      "phone": "+987123456"
+    }
+  },
+  "createdAt": {
+    "$date": "2025-03-01T04:47:31.131Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T04:47:31.131Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c2916c7694ad640c68f822"
+  },
+  "name": "Global Finance",
+  "companyType": "Sociedad Anónima",
+  "incorporationDate": {
+    "$date": "2012-04-15T00:00:00.000Z"
+  },
+  "category": "Servicios",
+  "years": 11,
+  "representative": {
+    "nameRepre": "Roberto Sánchez",
+    "position": "Director Financiero",
+    "contact": {
+      "email": "roberto.sanchez@globalfinance.com",
+      "phone": "+654789321"
+    }
+  },
+  "createdAt": {
+    "$date": "2025-03-01T04:47:40.537Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T04:47:40.537Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c291777694ad640c68f825"
+  },
+  "name": "HealthFirst",
+  "companyType": "Sociedad Limitada",
+  "incorporationDate": {
+    "$date": "2020-02-18T00:00:00.000Z"
+  },
+  "category": "Salud",
+  "years": 3,
+  "representative": {
+    "nameRepre": "Ana Martínez",
+    "position": "Directora Médica",
+    "contact": {
+      "email": "ana.martinez@healthfirst.com",
+      "phone": "+741258963"
+    }
+  },
+  "createdAt": {
+    "$date": "2025-03-01T04:47:51.120Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T04:47:51.120Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c291817694ad640c68f828"
+  },
+  "name": "Constructora Avance",
+  "companyType": "Sociedad Anónima",
+  "incorporationDate": {
+    "$date": "2016-09-30T00:00:00.000Z"
+  },
+  "category": "Servicios",
+  "years": 7,
+  "representative": {
+    "nameRepre": "Javier Torres",
+    "position": "Gerente de Proyectos",
+    "contact": {
+      "email": "javier.torres@constructoraavance.com",
+      "phone": "+369852147"
+    }
+  },
+  "createdAt": {
+    "$date": "2025-03-01T04:48:01.095Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T04:48:01.095Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c2918c7694ad640c68f82b"
+  },
+  "name": "EduSmart",
+  "companyType": "Sociedad Limitada",
+  "incorporationDate": {
+    "$date": "2017-07-05T00:00:00.000Z"
+  },
+  "category": "Educación",
+  "years": 6,
+  "representative": {
+    "nameRepre": "Paula Ramírez",
+    "position": "Coordinadora Académica",
+    "contact": {
+      "email": "paula.ramirez@edusmart.com",
+      "phone": "+753951486"
+    }
+  },
+  "createdAt": {
+    "$date": "2025-03-01T04:48:12.005Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T04:48:12.005Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c291937694ad640c68f82e"
+  },
+  "name": "FoodTech",
+  "companyType": "Sociedad Anónima",
+  "incorporationDate": {
+    "$date": "2013-03-12T00:00:00.000Z"
+  },
+  "category": "Manufactura",
+  "years": 10,
+  "representative": {
+    "nameRepre": "Fernando Díaz",
+    "position": "Director Ejecutivo",
+    "contact": {
+      "email": "fernando.diaz@foodtech.com",
+      "phone": "+159753486"
+    }
+  },
+  "createdAt": {
+    "$date": "2025-03-01T04:48:19.008Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T04:48:19.008Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c291fa7694ad640c68f834"
+  },
+  "name": "SoftWave",
+  "companyType": "Sociedad Anónima",
+  "incorporationDate": {
+    "$date": "2014-01-08T00:00:00.000Z"
+  },
+  "category": "Tecnología",
+  "years": 9,
+  "representative": {
+    "nameRepre": "Daniel Herrera",
+    "position": "CTO",
+    "contact": {
+      "email": "daniel.herrera@softwave.com",
+      "phone": "+852369741"
+    }
+  },
+  "createdAt": {
+    "$date": "2025-03-01T04:50:02.144Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T04:50:02.144Z"
+  }
+}]

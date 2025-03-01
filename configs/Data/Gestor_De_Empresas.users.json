@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "67be86b33001c1ee21273669"
+  },
+  "name": "Juan",
+  "surname": "Pérez",
+  "username": "juanperez",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$yL8j2p9I/jVz+gxggkG09Q$I95bFGu/IHU+7sUSeVv2noalOk5AQOVWTunBqzgNqzE",
+  "role": "ADMIN_ROLE",
+  "state": true
+},
+{
+  "_id": {
+    "$oid": "67c28c24ebf4980c234870b0"
+  },
+  "name": "Juan",
+  "surname": "Perez",
+  "username": "juanperez2",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$fJaEknPI1RNwLxXzk08qwA$amKpNU6P/OGxAIXqAcLgekWm/jAzk65SFcyqdYHvZGk",
+  "role": "ADMIN_ROLE",
+  "state": true
+}]

@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "9191712d-c66e-4889-ad58-50178df02d95",
+		"_postman_id": "25c26879-41f9-44fc-b009-566f8fedf628",
 		"name": "GestorEmpresas_endPoints",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "41661503"
+		"_exporter_id": "41970442"
 	},
 	"item": [
 		{
@@ -16,13 +16,13 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JmNzdiN2FhMTFiNjEzOTBlYmM5YmQiLCJpYXQiOjE3NDA2MDEyODEsImV4cCI6MTc0MDYxMjA4MX0.ygJYDsMbJL9YRHwo2--mzRzdYxT12EW0vvLmOxIZJDM",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MyOGMyNGViZjQ5ODBjMjM0ODcwYjAiLCJpYXQiOjE3NDA4MDM2OTcsImV4cCI6MTc0MDgxNDQ5N30.UWRHeqH6ngToR1lnpXrWbADFPIkobMsya1ZSf1_lAYU",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Innovative Solutions\",\r\n  \"companyType\": \"Sociedad Limitada\",\r\n  \"incorporationDate\": \"2018-05-20\",\r\n  \"category\": \"Servicios\",\r\n  \"years\": 5,\r\n  \"representative\": {\r\n    \"nameRepre\": \"Maria Lopez\",\r\n    \"position\": \"Directora General\",\r\n    \"contact\": {\r\n      \"email\": \"maria.lopez@innovativesolutions.com\",\r\n      \"phone\": \"+987654321\"\r\n    }\r\n  }\r\n}",
+							"raw": "{\r\n  \"name\": \"MarketTrends\",\r\n  \"companyType\": \"Sociedad Limitada\",\r\n  \"incorporationDate\": \"2019-05-17\",\r\n  \"category\": \"Servicios\",\r\n  \"years\": 4,\r\n  \"representative\": {\r\n    \"nameRepre\": \"Silvia Morales\",\r\n    \"position\": \"Directora de Estrategia\",\r\n    \"contact\": {\r\n      \"email\": \"silvia.morales@markettrends.com\",\r\n      \"phone\": \"+456987321\"\r\n    }\r\n  }\r\n}\r\n\r\n/* Json sin registrar, para enviar a la Base de datos*/",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -226,7 +226,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"username\": \"juanperez\",\r\n  \"password\": \"password123\"\r\n}",
+							"raw": "{\r\n  \"username\": \"juanperez2\",\r\n  \"password\": \"password123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
